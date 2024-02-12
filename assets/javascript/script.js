@@ -16,9 +16,6 @@
 
   const boxElementsArr = Array.from(document.querySelectorAll(".box"));
 
-  const container = document.querySelector(".container");
-  const winModal = document.querySelector(".win-modal");
-
   // *** Functions ***
 
   function sortArrRandomly(arr) {
@@ -31,9 +28,11 @@
 
   function onWin() {
     setTimeout(function () {
-      container.style.display = "none";
-      winModal.style.display = "block";
-    }, 2 * 1000);
+      alert("You did it!");
+      if (confirm("Do you want to play again?")) {
+        location.reload();
+      }
+    }, 1 * 1000);
   }
 
   function onBoxClick() {
