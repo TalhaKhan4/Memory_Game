@@ -1,16 +1,16 @@
+/*** css reset ***/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/*** layout ***/
 
-  height: 100vh;
+body {
   box-sizing: border-box;
+  height: 100vh;
   background-color: #000;
 }
 
@@ -22,7 +22,7 @@ body {
 
   width: 100%;
   height: 100%;
-  padding: 1%;
+  padding: 10px;
 }
 
 .box {
@@ -30,8 +30,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  width: calc(calc(100% / 6) - 1%);
-  height: 23%;
+  width: calc(92% / 6);
+  height: calc(93% / 4);
   border-radius: 5px;
   background-color: #fff;
   cursor: pointer;
@@ -39,41 +39,29 @@ body {
 }
 
 .box img {
-  width: 55%;
+  width: 60%;
   display: none;
 }
 
-.win-modal {
-  display: none;
-  width: 50%;
-  height: 80%;
+/*** media queries  ***/
+
+@media (max-width: 1030px) {
+  .box {
+    width: calc(92% / 4);
+    height: calc(93% / 6);
+  }
+  .box img {
+    width: 65%;
+  }
 }
 
-.win-modal .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+@media (max-width: 430px) {
+  .box {
+    width: calc(95% / 3);
+    height: calc(91% / 8);
+  }
 
-  width: 100%;
-  height: 100%;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  background-color: #fff;
-}
-
-.wrapper p {
-  font-size: 75px;
-  color: #2e2d2d;
-}
-
-.wrapper button {
-  all: unset;
-  padding: 20px;
-  font-size: 35px;
-  background-color: #2e2d2d;
-  color: #fff;
-  cursor: pointer;
+  .box img {
+    width: 60%;
+  }
 }
